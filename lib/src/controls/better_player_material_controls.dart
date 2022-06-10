@@ -383,17 +383,25 @@ class _BetterPlayerMaterialControlsState
           : Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
+                  _buildSkipButton(),
+                _buildReplayButton(_controller!),
                 if (_controlsConfiguration.enableSkips)
-                  Expanded(child: _buildSkipButton())
+                  _buildForwardButton()
                 else
-                  const SizedBox(),
-                Expanded(child: _buildReplayButton(_controller!)),
-                if (_controlsConfiguration.enableSkips)
-                  Expanded(child: _buildForwardButton())
-                else
-                  const SizedBox(),
+                  _buildForwardButtonzero(),
               ],
             ),
+    );
+  }
+  
+  Widget _buildForwardButtonzero() {
+    return _buildHitAreaClickableButton(
+      icon: Icon(
+        _controlsConfiguration.skipForwardIcon,
+        size: 24,
+        color: Colors.transparent,
+      ),
+      onClicked: (){},
     );
   }
 
