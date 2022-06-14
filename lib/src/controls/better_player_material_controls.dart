@@ -451,16 +451,6 @@ class _BetterPlayerMaterialControlsState
     );
   }
   
-Widget _buildForwardButtonzero() {
-    return _buildHitAreaClickableButton(
-      icon: Icon(
-        _controlsConfiguration.skipForwardIcon,
-        size: 24,
-        color: Colors.transparent,
-      ),
-      onClicked: (){},
-    );
-  }
   
   Widget _buildReplayButton(VideoPlayerController controller) {
     final bool isFinished = isVideoFinished(_latestValue);
